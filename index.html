@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavyansh Kumar | Portfolio</title>
+    <style>
+        /* General Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Profile Image */
+        .profile-img-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .profile-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #0056b3;
+        }
+        .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 40px; /* Adjust icon size */
+    height: 40px;
+    transition: transform 0.3s ease;
+    border-radius: 50%; /* Optional: make icons circular */
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".section");
+            function revealSections() {
+                sections.forEach((section) => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop < window.innerHeight - 100) {
+                        section.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", revealSections);
+            revealSections(); // Initial call
+        });
+    </script>
+</head>
+<body>
+    <div class="profile-img-container">
+        <img src="profile.jpg" alt="Kavyansh Kumar" class="profile-img">
+        <div class="profile-name">Kavyansh Kumar</div>
+        <a href="cv.pdf" download class="download-btn">Download CV</a>
+    </div>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am Kavyansh Kumar, an aspiring tech enthusiast currently pursuing my BCA at Galgotias University. Passionate about exploring the world of artificial intelligence and machine learning, I enjoy solving complex problems and bringing ideas to life through code. With a keen interest in programming and innovation, I am always eager to learn and experiment with new technologies.</p>
+        </div>
+    </section>
+    
+    <section id="education" class="section">
+        <div class="container"> 
+            <h2>Education</h2>
+            <p>10th & 12th from Mata Shiv Devi Senior Secondary School (CBSE, Private)</p>
+            <p>Ongoing Bachelor's Degree in BCA (Hons) at Galgotias University, Greater Noida</p>
+        </div>
+    </section>
+    
+    <section id="skills" class="section"> 
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python, JavaScript, HTML, CSS</li>
+                <li>AI/ML, TensorFlow, OpenCV</li>
+                <li>Web Development, Object Detection</li>
+                <li>Data Structures & Algorithms</li>
+                <li>Database Management (MySQL, MongoDB)</li>
+                <li>Cloud Computing (AWS, Firebase)</li>
+                <li>Cybersecurity Fundamentals</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <p>Object Detection Model using Python & TensorFlow</p>
+            <p>AI-Powered Chatbot using NLP</p>
+            <p>Face Recognition System with OpenCV</p>
+            <p>Portfolio Website using HTML, CSS, JavaScript</p>
+        </div>
+    </section>
+    
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank"><img src="instagram.jpg" alt="Instagram"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="linkedin.jpg" alt="LinkedIn"></a>
+                <a href="mailto:kavyansh@example.com" target="_blank"><img src="gmail.jpg" alt="Gmail"></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
